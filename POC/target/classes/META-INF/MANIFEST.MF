@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1504113309467
+Build-Jdk: 1.8.0_111
+Built-By: gawish
+Bundle-Description: Camel Content-Based Router Example
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: Camel Content-Based Router Example [POC_20170820]
+Bundle-SymbolicName: POC_20170820
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.poc;uses:="org.w3c.dom,org.apache.camel,org.apache.c
+ amel.processor.aggregate,org.apache.camel.impl,javax.xml.parsers";versi
+ on="1.0.0.SNAPSHOT"
+Import-Package: javax.xml.parsers,org.apache.activemq.camel.component;ve
+ rsion="[5.11,6)",org.apache.camel;version="[2.15,3)",org.apache.camel.i
+ mpl;version="[2.15,3)",org.apache.camel.processor.aggregate;version="[2
+ .15,3)",org.w3c.dom
+Tool: Bnd-1.50.0

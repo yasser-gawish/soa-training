@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 (x64) (http://www.altova.com) by Werner Lober (Hewlett Packard Enterprise Com) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Daniela Sedola (DaimlerChrysler AG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="VANIS">
+		<xs:annotation>
+			<xs:documentation>Systemkennung</xs:documentation>
+		</xs:annotation>
+		<!--  15.04.2005  I.S. Änderung ESnrtype und SNRtype - keine Prüfung  -->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VERSION" type="VERSIONSTAMMDATENSNRtype"/>
+				<xs:element name="BEARBKZ" type="BEARBKZtype"/>
+				<xs:element name="ZAEHLER" type="ZAEHLERtype"/>
+				<xs:element ref="SNRSTAMM"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SNRSTAMM">
+		<xs:annotation>
+			<xs:documentation>Stammdaten aus Dialog zu einer Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SNRSATZ" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SNR" type="SNRtype"/>
+							<xs:element name="ES1" type="ESNRtype"/>
+							<xs:element name="ES2" type="ESNRtype"/>
+							<xs:element name="SNRDRUCK" type="SNRtype"/>
+							<xs:element name="BENLANG" type="BENLANGtype"/>
+							<xs:element name="BENKURZ" type="BENKURZtype"/>
+							<xs:element name="BEREICH" type="KTEILBEtype" minOccurs="0"/>
+							<xs:element name="VERBRAUCHERORTE">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="VO1" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO2" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO3" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO4" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO5" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO6" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO7" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO8" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO9" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO10" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO11" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO12" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO13" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO14" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO15" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO16" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO17" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO18" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO19" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO20" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO21" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO22" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO23" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO24" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO25" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO26" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO27" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO28" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO29" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO30" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO31" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO32" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO33" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO34" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO35" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO36" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO37" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO38" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO39" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO40" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO41" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO42" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO43" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO44" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO45" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO46" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO47" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO48" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO49" type="VOtype" minOccurs="0"/>
+										<xs:element name="VO50" type="VOtype" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="MERKMALE">
+								<xs:annotation>
+									<xs:documentation>Merkmale aus TSD</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="M1" type="MERKMALtype"/>
+										<xs:element name="M2" type="MERKMALtype"/>
+										<xs:element name="M3" type="MERKMALtype"/>
+										<xs:element name="M4" type="MERKMALtype"/>
+										<xs:element name="M5" type="MERKMALtype"/>
+										<xs:element name="M6" type="MERKMALtype"/>
+										<xs:element name="M7" type="MERKMALtype"/>
+										<xs:element name="M8" type="MERKMALtype"/>
+										<xs:element name="M9" type="MERKMALtype"/>
+										<xs:element name="M10" type="MERKMALtype"/>
+										<xs:element name="M11" type="MERKMALtype"/>
+										<xs:element name="M12" type="MERKMALtype"/>
+										<xs:element name="M13" type="MERKMALtype"/>
+										<xs:element name="M14" type="MERKMALtype"/>
+										<xs:element name="M15" type="MERKMALtype"/>
+										<xs:element name="M16" type="MERKMALtype"/>
+										<xs:element name="M17" type="MERKMALtype"/>
+										<xs:element name="M18" type="MERKMALtype"/>
+										<xs:element name="M19" type="MERKMALtype"/>
+										<xs:element name="M20" type="MERKMALtype"/>
+										<xs:element name="M21" type="MERKMALtype"/>
+										<xs:element name="M22" type="MERKMALtype"/>
+										<xs:element name="M23" type="MERKMALtype"/>
+										<xs:element name="M24" type="MERKMALtype"/>
+										<xs:element name="M25" type="MERKMALtype"/>
+										<xs:element name="M26" type="MERKMALtype"/>
+										<xs:element name="M27" type="MERKMALtype"/>
+										<xs:element name="M28" type="MERKMALtype"/>
+										<xs:element name="M29" type="MERKMALtype"/>
+										<xs:element name="M30" type="MERKMALtype"/>
+										<xs:element name="M31" type="MERKMALtype"/>
+										<xs:element name="M32" type="MERKMALtype"/>
+										<xs:element name="M33" type="MERKMALtype"/>
+										<xs:element name="M34" type="MERKMALtype"/>
+										<xs:element name="M35" type="MERKMALtype"/>
+										<xs:element name="M36" type="MERKMALtype"/>
+										<xs:element name="M37" type="MERKMALtype"/>
+										<xs:element name="M38" type="MERKMALtype"/>
+										<xs:element name="M39" type="MERKMALtype"/>
+										<xs:element name="M40" type="MERKMALtype"/>
+										<xs:element name="M41" type="MERKMALtype"/>
+										<xs:element name="M42" type="MERKMALtype"/>
+										<xs:element name="M43" type="MERKMALtype"/>
+										<xs:element name="M44" type="MERKMALtype"/>
+										<xs:element name="M45" type="MERKMALtype"/>
+										<xs:element name="M46" type="MERKMALtype"/>
+										<xs:element name="M47" type="MERKMALtype"/>
+										<xs:element name="M48" type="MERKMALtype"/>
+										<xs:element name="M49" type="MERKMALtype"/>
+										<xs:element name="M50" type="MERKMALtype"/>
+										<xs:element name="M51" type="MERKMALtype"/>
+										<xs:element name="M52" type="MERKMALtype"/>
+										<xs:element name="M53" type="MERKMALtype"/>
+										<xs:element name="M54" type="MERKMALtype"/>
+										<xs:element name="M55" type="MERKMALtype"/>
+										<xs:element name="M56" type="MERKMALtype"/>
+										<xs:element name="M57" type="MERKMALtype"/>
+										<xs:element name="M58" type="MERKMALtype"/>
+										<xs:element name="M59" type="MERKMALtype"/>
+										<xs:element name="M60" type="MERKMALtype"/>
+										<xs:element name="M61" type="MERKMALtype"/>
+										<xs:element name="M62" type="MERKMALtype"/>
+										<xs:element name="M63" type="MERKMALtype"/>
+										<xs:element name="M64" type="MERKMALtype"/>
+										<xs:element name="M65" type="MERKMALtype"/>
+										<xs:element name="M66" type="MERKMALtype"/>
+										<xs:element name="M67" type="MERKMALtype"/>
+										<xs:element name="M68" type="MERKMALtype"/>
+										<xs:element name="M69" type="MERKMALtype"/>
+										<xs:element name="M70" type="MERKMALtype"/>
+										<xs:element name="M71" type="MERKMALtype"/>
+										<xs:element name="M72" type="MERKMALtype"/>
+										<xs:element name="M73" type="MERKMALtype"/>
+										<xs:element name="M74" type="MERKMALtype"/>
+										<xs:element name="M75" type="MERKMALtype"/>
+										<xs:element name="M76" type="MERKMALtype"/>
+										<xs:element name="M77" type="MERKMALtype"/>
+										<xs:element name="M78" type="MERKMALtype"/>
+										<xs:element name="M79" type="MERKMALtype"/>
+										<xs:element name="M80" type="MERKMALtype"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="EMPF1" type="EMPFtype" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Empfängerfeld1 aus Sachnummernstamm</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EMPF2" type="EMPFtype" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Empfängerfeld2 aus Sachnummernstamm</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EMPF3" type="EMPFtype" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Empfängerfeld3 aus Sachnummernstamm</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EMPF4" type="EMPFtype" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Empfängerfeld4 aus Sachnummernstamm</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EMPF5" type="EMPFtype" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Empfängerfeld5 aus Sachnummernstamm</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BENKURZtype">
+		<xs:annotation>
+			<xs:documentation>Benennung kurz Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BENLANGtype">
+		<xs:annotation>
+			<xs:documentation>Benennung lang Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="50"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ESNRtype">
+		<xs:annotation>
+			<xs:documentation>Ergaenzungsschluessel Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BEARBKZtype">
+		<xs:annotation>
+			<xs:documentation>Bearbeitungskennzeichen Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ZAEHLERtype">
+		<xs:annotation>
+			<xs:documentation>Datensatzzähler Sachnummer</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-9]{0,9}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="KTEILBEtype">
+		<xs:annotation>
+			<xs:documentation>Bereich fuer kritische Teile</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-9A-Z.]{0,2}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="MERKMALtype">
+		<xs:attribute name="value">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SNRtype">
+		<xs:annotation>
+			<xs:documentation>Sachnummer DIALOG</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VERSIONSTAMMDATENSNRtype">
+		<xs:annotation>
+			<xs:documentation>Version Datenstrom Stammdaten Sachnummern</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required" fixed="01.00">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VOtype">
+		<xs:annotation>
+			<xs:documentation>Verbraucherort</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="12"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="EMPFtype">
+		<xs:annotation>
+			<xs:documentation>EMPF (max 5 Empfängerfelder aus Sachnummerstamm)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="6"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

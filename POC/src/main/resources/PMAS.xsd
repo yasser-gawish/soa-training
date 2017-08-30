@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <xs:element name="processPartDataRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element type="BEARBKZtype" name="OPERATION" />
+            <xs:element type="ZAEHLERtype" name="COUNT" />
+            <xs:element name="partList">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="PART" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element type="SNRtype" name="SNR" />
+                              <xs:element type="ESNRtype" name="ES1" />
+                              <xs:element type="ESNRtype" name="ES2" />
+                              <xs:element type="SNRtype" name="SNRDRUCK" />
+                              <xs:element type="BENLANGtype" name="NAMELONG" />
+                              <xs:element type="BENKURZtype" name="NAMESHORT" />
+                              <xs:element type="KTEILBEtype" name="BEREICH" />
+                              <xs:element type="EMPFtype" name="EMPF1" />
+                              <xs:element type="EMPFtype" name="EMPF2" />
+                              <xs:element type="EMPFtype" name="EMPF3" />
+                              <xs:element type="EMPFtype" name="EMPF4" />
+                              <xs:element type="EMPFtype" name="EMPF5" />
+                              <xs:element name="VOLIST">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element type="VOtype" name="VO" maxOccurs="50" minOccurs="0" />
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="FLAGLIST">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element type="MERKMALtype" name="FLAG" maxOccurs="80" minOccurs="0" />
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="BEARBKZtype">
+      <xs:annotation>
+         <xs:documentation>Bearbeitungskennzeichen Sachnummer</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="1" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="ZAEHLERtype">
+      <xs:annotation>
+         <xs:documentation>Datensatzzähler Sachnummer</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:pattern value="[0-9]{0,9}" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="SNRtype">
+      <xs:annotation>
+         <xs:documentation>Sachnummer DIALOG</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string" />
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="ESNRtype">
+      <xs:annotation>
+         <xs:documentation>Ergaenzungsschluessel Sachnummer</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string" />
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="BENLANGtype">
+      <xs:annotation>
+         <xs:documentation>Benennung lang Sachnummer</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="50" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="BENKURZtype">
+      <xs:annotation>
+         <xs:documentation>Benennung kurz Sachnummer</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="5" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="KTEILBEtype">
+      <xs:annotation>
+         <xs:documentation>Bereich fuer kritische Teile</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:pattern value="[0-9A-Z.]{0,2}" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="VOtype">
+      <xs:annotation>
+         <xs:documentation>Verbraucherort</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="12" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="MERKMALtype">
+      <xs:attribute name="value">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="5" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="EMPFtype">
+      <xs:annotation>
+         <xs:documentation>EMPF (max 5 Empfängerfelder aus Sachnummerstamm)</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="value" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:string">
+               <xs:maxLength value="6" />
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
+</xs:schema>
